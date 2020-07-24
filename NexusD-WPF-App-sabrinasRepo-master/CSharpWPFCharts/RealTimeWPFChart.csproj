@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9454C32-2A57-41FE-9C6B-98BC2F34BC2C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSharpWPFCharts</RootNamespace>
+    <AssemblyName>CSharpWPFCharts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.3.8.0\lib\net45\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net45\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net45\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.4.8.1\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="NexusD3_Csharp_Lib">
+      <HintPath>D:\Research_Related\dbs_brl-master (1)\dbs_brl-master\NexusD3sharp\2_current_source\lib\NexusD3_Csharp_Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Nexus_Logger.cs" />
+    <Compile Include="RealTimeChartWindow.xaml.cs">
+      <DependentUpon>RealTimeChartWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SensorData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\3dscattericon.png" />
+    <Resource Include="icons\areaicon.png" />
+    <Resource Include="icons\baricon.png" />
+    <Resource Include="icons\barmetericon.png" />
+    <Resource Include="icons\boxicon.png" />
+    <Resource Include="icons\bubbleicon.png" />
+    <Resource Include="icons\clockicon.png" />
+    <Resource Include="icons\contouricon.png" />
+    <Resource Include="icons\financeicon.png" />
+    <Resource Include="icons\gantticon.png" />
+    <Resource Include="icons\linearmetericon.png" />
+    <Resource Include="icons\lineicon.png" />
+    <Resource Include="icons\metericon.png" />
+    <Resource Include="icons\pieicon.png" />
+    <Resource Include="icons\polaricon.png" />
+    <Resource Include="icons\pyramidicon.png" />
+    <Resource Include="icons\surfaceicon.png" />
+    <Resource Include="icons\trackicon.png" />
+    <Resource Include="icons\trendicon.png" />
+    <Resource Include="icons\xyicon.png" />
+    <Resource Include="icons\zoomicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\angry.png" />
+    <EmbeddedResource Include="images\bg.png" />
+    <EmbeddedResource Include="images\clock.png" />
+    <EmbeddedResource Include="images\cloud.png" />
+    <EmbeddedResource Include="images\computer.png" />
+    <EmbeddedResource Include="images\doc.png" />
+    <EmbeddedResource Include="images\gas.png" />
+    <EmbeddedResource Include="images\laugh.png" />
+    <EmbeddedResource Include="images\marble.png" />
+    <EmbeddedResource Include="images\marble2.png" />
+    <EmbeddedResource Include="images\marble3.png" />
+    <EmbeddedResource Include="images\molecule.png" />
+    <EmbeddedResource Include="images\nocomment.png" />
+    <EmbeddedResource Include="images\rain.png" />
+    <EmbeddedResource Include="images\robot1.png" />
+    <EmbeddedResource Include="images\robot2.png" />
+    <EmbeddedResource Include="images\robot3.png" />
+    <EmbeddedResource Include="images\robot4.png" />
+    <EmbeddedResource Include="images\robot5.png" />
+    <EmbeddedResource Include="images\rock.png" />
+    <EmbeddedResource Include="images\sad.png" />
+    <EmbeddedResource Include="images\service.png" />
+    <EmbeddedResource Include="images\small_computer.png" />
+    <EmbeddedResource Include="images\small_molecule.png" />
+    <EmbeddedResource Include="images\small_user.png" />
+    <EmbeddedResource Include="images\smile.png" />
+    <EmbeddedResource Include="images\snow.png" />
+    <EmbeddedResource Include="images\snowy.png" />
+    <EmbeddedResource Include="images\software.png" />
+    <EmbeddedResource Include="images\star.png" />
+    <EmbeddedResource Include="images\sun.png" />
+    <EmbeddedResource Include="images\tile.png" />
+    <EmbeddedResource Include="images\wood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="RealTimeChartWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
